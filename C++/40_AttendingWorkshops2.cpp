@@ -1,6 +1,6 @@
 /**
  * Author  : BurningTiles
- * Created : 2020-09-12 02:43:35
+ * Created : 2020-09-12 02:33:41
  * Link    : GitHub.com/BurningTiles
  * Program : Attending Workshops
 **/
@@ -9,33 +9,39 @@
 
 using namespace std;
 
-struct Workshop{
-	int start,duration,end;
+class Workshop{
+	public:
+	int start,end,duration;
+	Workshop(int s, int d):start(s), end(s+d), duration(d){}
+	bool operator < (const Workshop& w){
+		if(duration+start<w.duration+w.start) return true;
+		return false;
+	}
 };
 
-bool compare(const Workshop& a, const Workshop& b){ return a.end<b.end; }
-
-struct Available_Workshops{
+class Available_Workshops{
+	public:
 	int n;
-	vector<Workshop> list;
+	vector<Workshop> wlist;
 };
 
 Available_Workshops* initialize(int s[],int d[], int n){
 	Available_Workshops *temp = new Available_Workshops;
 	temp->n = n;
 	for(int i=0; i<n; i++)
-		temp->list.push_back({s[i],d[i],s[i]+d[i]});
-	sort(temp->list.begin(), temp->list.end(), compare);    
+		temp->wlist.push_back(Workshop(s[i],d[i]));
+	sort(temp->wlist.begin(), temp->wlist.end());    
 	return temp;
 }
 
 int CalculateMaxWorkshops(Available_Workshops *temp){
 	int ans = 0, e = 0;
-	for(auto &a:temp->list)
+	for(auto &a:temp->wlist){
 		if(a.start>=e){
 			++ans;
 			e=a.end;
 		}
+	}
 	return ans;
 }
 
@@ -58,7 +64,6 @@ int main(int argc, char *argv[]) {
 	cout << CalculateMaxWorkshops(ptr) << endl;
 	return 0;
 }
-
 
 /**
 

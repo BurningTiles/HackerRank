@@ -2,7 +2,7 @@
  * Author  : BurningTiles
  * Created : 2020-09-11 16:24:20
  * Link    : GitHub.com/BurningTiles
- * Program : 
+ * Program : C++ Class Template Specialization
 **/
 
 #include <bits/stdc++.h>

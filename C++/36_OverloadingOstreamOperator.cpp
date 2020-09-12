@@ -13,10 +13,10 @@ class Person {
 public:
 	Person(const string& first_name, const string& last_name) : first_name_(first_name), last_name_(last_name) {}
 	const string& get_first_name() const {
-	  return first_name_;
+		return first_name_;
 	}
 	const string& get_last_name() const {
-	  return last_name_;
+		return last_name_;
 	}
 private:
 	string first_name_;

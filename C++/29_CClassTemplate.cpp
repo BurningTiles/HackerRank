@@ -12,21 +12,21 @@ using namespace std;
 
 template <class T>
 class AddElements{
-    public:
-    T a;
-    AddElements(T b):a(b){}
-    T add(T &b){
-        return a+b;
-    }
+	public:
+	T a;
+	AddElements(T b):a(b){}
+	T add(T &b){
+		return a+b;
+	}
 	string concatenate(string b){
-        return a+b;
-    }
+		return a+b;
+	}
 };
 
 int start(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    return 0;
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	return 0;
 }
 
 int temp=start();

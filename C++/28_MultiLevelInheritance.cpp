@@ -17,10 +17,10 @@ class Triangle{
 };
 
 class Isosceles : public Triangle{
-  	public:
-  		void isosceles(){
+	public:
+		void isosceles(){
 			cout<<"I am an isosceles triangle\n";
-  		}
+		}
 };
 
 class Equilateral : public Isosceles {
@@ -31,7 +31,6 @@ class Equilateral : public Isosceles {
 };
 
 int main(){
-  
 	Equilateral eqr;
 	eqr.equilateral();
 	eqr.isosceles();
